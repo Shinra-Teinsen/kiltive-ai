@@ -1,0 +1,48 @@
+<!-- pages/register.html -->
+<div class="register-header">
+    <button class="icon-btn" data-nav="welcome"><svg class="icon sm"><use href="#i-back"/></svg></button>
+    <div class="register-title">Créer un compte</div>
+  </div>
+  <div class="register-wrap">
+    <form class="register-form" id="register-form">
+      <div class="form-grid">
+        <div class="field full">
+          <label>Nom complet</label>
+          <div class="input"><svg class="icon sm"><use href="#i-user"/></svg><input type="text" id="reg-name" placeholder="Jean Baptiste" required></div>
+        </div>
+        <div class="field full">
+          <label>Adresse e-mail</label>
+          <div class="input"><svg class="icon sm"><use href="#i-user"/></svg><input type="email" id="reg-email" placeholder="jean@exemple.com" required></div>
+        </div>
+        <div class="field full">
+          <label>Mot de passe</label>
+          <div class="input"><svg class="icon sm"><use href="#i-user"/></svg><input type="password" id="reg-password" placeholder="6 caractères minimum" minlength="6" required></div>
+        </div>
+        <div class="field">
+          <label>Numéro de téléphone</label>
+          <div class="input"><svg class="icon sm"><use href="#i-phone"/></svg><input type="text" id="reg-phone" placeholder="+509 34 12 5678"></div>
+        </div>
+        <div class="field">
+          <label>Localisation</label>
+          <div class="input"><svg class="icon sm"><use href="#i-pin"/></svg><input type="text" id="reg-location" placeholder="Cap-Haïtien, Nord"></div>
+        </div>
+        <div class="field">
+          <label>Cultures principales</label>
+          <div class="input"><svg class="icon sm"><use href="#i-leaf"/></svg><input type="text" id="reg-crops" placeholder="Tomate, maïs, banane"></div>
+        </div>
+        <div class="field">
+          <label>Taille de l'exploitation</label>
+          <div class="input"><svg class="icon sm"><use href="#i-layers"/></svg><input type="text" id="reg-farmsize" placeholder="1,5 hectare"></div>
+        </div>
+        <div class="field full">
+          <label>Langue préférée</label>
+          <div class="lang-row" id="reg-lang-row">
+            <button type="button" class="lang-pill active" data-lang="kreyol">Kreyòl</button>
+            <button type="button" class="lang-pill" data-lang="francais">Français</button>
+          </div>
+        </div>
+      </div>
+      <div class="form-message" id="register-message"></div>
+      <button type="submit" class="btn btn-primary btn-block" id="register-submit" style="margin-top:6px;">Continuer</button>
+    </form>
+  </div>

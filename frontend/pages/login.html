@@ -1,0 +1,20 @@
+<!-- pages/login.html -->
+<div class="register-header">
+    <button class="icon-btn" data-nav="welcome"><svg class="icon sm"><use href="#i-back"/></svg></button>
+    <div class="register-title">Se connecter</div>
+  </div>
+  <div class="register-wrap">
+    <form class="register-form" id="login-form">
+      <div class="field">
+        <label>Adresse e-mail</label>
+        <div class="input"><svg class="icon sm"><use href="#i-user"/></svg><input type="email" id="login-email" placeholder="jean@exemple.com" required></div>
+      </div>
+      <div class="field">
+        <label>Mot de passe</label>
+        <div class="input"><svg class="icon sm"><use href="#i-user"/></svg><input type="password" id="login-password" placeholder="Votre mot de passe" required></div>
+      </div>
+      <div class="form-message" id="login-message"></div>
+      <button type="submit" class="btn btn-primary btn-block" id="login-submit" style="margin-top:6px;">Se connecter</button>
+      <button type="button" class="btn btn-ghost btn-block" style="margin-top:10px;" data-nav="register">Pas encore de compte ? Créer un compte</button>
+    </form>
+  </div>

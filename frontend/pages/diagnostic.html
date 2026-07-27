@@ -1,0 +1,42 @@
+<!-- pages/diagnostic.html -->
+<section class="page" data-page="diagnostic">
+<div class="page-head"><h1>Diagnostiquer une plante</h1><p>Prenez ou importez une photo pour une analyse instantanée.</p></div>
+        <div class="diag-layout">
+          <div>
+            <div class="photo-frame">
+              <svg viewBox="0 0 300 260" style="position:absolute; inset:0; width:100%; height:100%;" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="150" cy="230" rx="90" ry="14" fill="#000" opacity="0.15"/>
+                <path d="M150,220 C150,150 130,120 150,60" stroke="#DCEFDC" stroke-width="5" fill="none" stroke-linecap="round"/>
+                <path d="M150,150 C110,140 90,110 95,80 C120,90 140,115 150,150 Z" fill="#66BB6A"/>
+                <path d="M150,150 C190,140 210,105 202,72 C175,85 155,112 150,150 Z" fill="#81C784"/>
+                <path d="M150,190 C120,182 100,160 105,138 C128,146 145,166 150,190 Z" fill="#43A047"/>
+                <ellipse cx="118" cy="98" rx="7" ry="5" fill="#B45309" opacity="0.75"/>
+                <ellipse cx="132" cy="115" rx="5" ry="4" fill="#B45309" opacity="0.6"/>
+              </svg>
+              <div class="photo-badge">Photo analysée</div>
+            </div>
+            <button class="btn btn-ghost btn-block" style="margin-top:14px;"><svg class="icon sm"><use href="#i-camera"/></svg>Analyser une nouvelle photo</button>
+          </div>
+          <div class="diag-card">
+            <div class="diag-top">
+              <div><div class="diag-plant">Tomate</div><div class="diag-sub">Mildiou précoce (Early Blight)</div></div>
+              <div class="confidence-badge">92% fiable</div>
+            </div>
+            <div class="diag-section">
+              <h5>Symptômes</h5>
+              <ul><li>Taches brunes concentriques</li><li>Jaunissement des feuilles basses</li></ul>
+            </div>
+            <div class="diag-section">
+              <h5>Traitement</h5>
+              <p>Fongicide à base de cuivre, retirer les feuilles atteintes.</p>
+            </div>
+            <div class="diag-section">
+              <h5>Prévention</h5>
+              <p>Rotation des cultures, éviter l'excès d'humidité au feuillage.</p>
+            </div>
+            <div class="diag-actions">
+              <button class="btn btn-primary" data-page="chat">Demander conseil à l'IA</button>
+              <button class="btn btn-ghost" data-page="suivi">Ajouter au suivi</button>
+            </div>
+          </div>
+        </div></section>

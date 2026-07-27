@@ -1,0 +1,17 @@
+<!-- components/modal.html — fenêtre modale générique, réutilisée par tous les formulaires -->
+<div class="modal-backdrop" id="modal-backdrop">
+  <div class="modal-box" role="dialog" aria-modal="true">
+    <div class="modal-head">
+      <h3 id="modal-title">Titre</h3>
+      <button type="button" class="icon-btn" id="modal-close"><svg class="icon sm"><use href="#i-back"/></svg></button>
+    </div>
+    <form id="modal-form">
+      <div class="modal-body" id="modal-body"><!-- champs injectés dynamiquement --></div>
+      <div class="modal-message" id="modal-message"></div>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-ghost" id="modal-cancel">Annuler</button>
+        <button type="submit" class="btn btn-primary" id="modal-submit">Enregistrer</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kiltive AI — Assistant agricole intelligent</title>
+<meta name="description" content="Kiltive AI aide les agriculteurs haïtiens à diagnostiquer leurs plantes, suivre leurs cultures, consulter la météo et vendre leurs récoltes.">
+<meta property="og:title" content="Kiltive AI — Assistant agricole intelligent">
+<meta property="og:description" content="Diagnostic de plantes, suivi de culture, météo et marché local — tout en un, pensé pour les agriculteurs d'Haïti.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#1B5E20">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- Écran de chargement affiché pendant le démarrage de l'app -->
+<div id="boot-loader">
+  <div class="boot-mark">
+    <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 21c-1-6 1-11 6-14 5-3 10-2 12 0-2 6-6 10-12 12-2 .7-4 1.3-6 2Z"/><path d="M8 18c2-3 4-6 9-10"/>
+    </svg>
+  </div>
+  <div class="boot-spinner"></div>
+</div>
+
+<!-- Filigrane topographique en fond -->
+<svg class="contour-bg" viewBox="0 0 1440 1600" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="#1B5E20" stroke-width="1" fill="none" opacity="0.05">
+    <path d="M-100,120 C 300,60 700,180 1100,100 S 1600,160 1900,80"/>
+    <path d="M-100,220 C 300,160 700,280 1100,200 S 1600,260 1900,180"/>
+    <path d="M-100,320 C 300,260 700,380 1100,300 S 1600,360 1900,280"/>
+    <path d="M-100,900 C 300,840 700,960 1100,880 S 1600,940 1900,860"/>
+    <path d="M-100,1000 C 300,940 700,1060 1100,980 S 1600,1040 1900,960"/>
+    <path d="M-100,1100 C 300,1040 700,1160 1100,1080 S 1600,1140 1900,1060"/>
+    <path d="M-100,1400 C 300,1340 700,1460 1100,1380 S 1600,1440 1900,1360"/>
+  </g>
+</svg>
+
+<!-- Sprite d'icônes, injecté au démarrage -->
+<div id="icons-root"></div>
+
+<!-- Vues plein écran avant connexion : accueil / inscription / connexion -->
+<section id="auth-root" style="display:none;"></section>
+
+<!-- Coquille applicative (après connexion) -->
+<div class="shell" id="shell" style="display:none;">
+
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+  <aside class="drawer" id="drawer"></aside>
+  <div id="modal-root"></div>
+
+  <div id="sidebar-root"></div>
+
+  <div class="main">
+    <div id="topbar-root"></div>
+    <div class="content" id="content"></div>
+  </div>
+
+  <div id="bottomnav-root"></div>
+
+</div>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

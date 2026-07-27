@@ -1,0 +1,18 @@
+<!-- components/topbar.html — barre du haut (titre, météo, notifications, avatar) -->
+<header class="topbar">
+      <div class="topbar-left">
+        <button class="hamburger" id="hamburger-btn"><svg class="icon sm"><use href="#i-menu"/></svg></button>
+        <div class="topbar-title-wrap">
+          <b id="topbar-title">Bonjour Jean 👋</b>
+          <div class="loc-row"><svg class="icon"><use href="#i-pin"/></svg><span id="topbar-sub">Cap-Haïtien, Nord</span></div>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <div class="weather-pill">
+          <svg class="icon"><use href="#i-sun"/></svg>
+          <div><b>27°C</b><span>Ensoleillé</span></div>
+        </div>
+        <button class="bell-btn"><svg class="icon sm"><use href="#i-bell"/></svg></button>
+        <button class="avatar" style="border:none;" data-page="profil">J</button>
+      </div>
+    </header>
