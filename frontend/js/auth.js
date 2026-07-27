@@ -30,10 +30,11 @@ async function enterAppWithSession(session){
 // Vérifie au chargement si une session Supabase existe déjà (reste connecté après refresh)
 export async function checkExistingSession(){
   const { data } = await sb.auth.getSession();
+
   if(data && data.session){
     await enterAppWithSession(data.session);
   } else {
-    showAuthView('welcome');
+    await showAuthView('welcome');
   }
 }
 

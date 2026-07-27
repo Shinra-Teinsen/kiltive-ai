@@ -43,7 +43,10 @@ ul{list-style:none;}
 .contour-bg{
   position:fixed; inset:0; z-index:0; pointer-events:none; opacity:0.5;
 }
-
+#auth-root{
+  width:100%;
+  min-height:100vh;
+}
 /* ---------- Boutons & chips (design system) ---------- */
 .btn{ font-family:'Inter',sans-serif; font-weight:700; font-size:14px; border:none; border-radius:14px; padding:14px 22px; display:inline-flex; align-items:center; justify-content:center; gap:8px; cursor:pointer; transition:transform .15s ease, box-shadow .15s ease;}
 .btn:hover{ transform:translateY(-1px);}
@@ -180,6 +183,7 @@ ul{list-style:none;}
 .page-head{ margin-bottom:22px;}
 .page-head h1{ font-family:'Poppins',sans-serif; font-weight:700; font-size:clamp(20px,2.4vw,26px);}
 .page-head p{ color:var(--gray); font-size:13.5px; margin-top:4px;}
+
 
 /* --- Bottom nav (mobile) --- */
 .bottomnav{
@@ -409,3 +413,4 @@ ul{list-style:none;}
 .drawer.open{ transform:translateX(0);}
 .drawer .sidebar-brand{ padding-top:24px;}
 .drawer .sidebar-nav{ padding:6px 14px;}
+

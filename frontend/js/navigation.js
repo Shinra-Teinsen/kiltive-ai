@@ -30,22 +30,52 @@ const cache = new Map(); // évite de re-télécharger un fragment déjà charg�
 
 async function fetchFragment(path){
   if(cache.has(path)) return cache.get(path);
-  const res = await fetch(path);
+
+  // DEBUG TEMP — force le navigateur/service worker à ne pas servir une réponse en cache
+  const res = await fetch(path, { cache: 'no-store' });
+
+  console.log('[DEBUG] fetchFragment status:', res.status, 'url reçue:', res.url);
+
   if(!res.ok) throw new Error(`Impossible de charger ${path}`);
-  const html = await res.text();
+  let html = await res.text();
+
+  // Retire tout <script> injecté par un serveur de dev (ex: Live Server injecte
+  // son script de rechargement dans le HTML servi, y compris dans nos fragments,
+  // parfois en plein milieu d'un <svg> ce qui casse le rendu du reste du fragment).
+  // Nos fragments pages/*.html n'ont jamais besoin de <script> inline, donc c'est sans risque.
+  html = html.replace(/<script[\s\S]*?<\/script>/gi, '');
+
   cache.set(path, html);
   return html;
 }
 
 // --------- Vues plein écran avant connexion (welcome / register / login) ---------
 export async function showAuthView(name){
-  document.getElementById('shell').style.display = 'none';
+  console.log("SHOW AUTH VIEW:", name);
+
+  const shell = document.getElementById('shell');
   const root = document.getElementById('auth-root');
+
+  shell.style.display = 'none';
+
   root.className = AUTH_VIEW_CLASS[name] || '';
   root.style.display = 'flex';
-  root.innerHTML = await fetchFragment(`pages/${name}.html`);
-}
 
+  console.log("Loading:", `pages/${name}.html`);
+
+  try {
+    const html = await fetchFragment(`pages/${name}.html`);
+
+    console.log("HTML loaded:", html.length);
+
+    root.innerHTML = html;
+
+    console.log("Auth root content:", root.innerHTML.length);
+
+  } catch(error){
+    console.error("AUTH LOAD ERROR:", error);
+  }
+}
 export function hideAuthViews(){
   document.getElementById('auth-root').style.display = 'none';
   document.getElementById('shell').style.display = 'flex';
